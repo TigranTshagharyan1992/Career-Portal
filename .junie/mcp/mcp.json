@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "C:\\xampp\\php\\php.exe",
+            "args": [
+                "C:\\OSPanel\\home\\career-gtportal.local\\artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

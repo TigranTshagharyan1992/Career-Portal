@@ -1,0 +1,79 @@
+/* Dashboard Custom CSS */
+
+/* Main Container Background */
+.dashboard-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-family: 'Inter', sans-serif;
+    /* Assuming Inter or system font */
+}
+
+.dark .dashboard-container {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Glassmorphism Card Style */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.dark .dashboard-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect for Cards */
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .dashboard-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content Styling within Cards */
+.dashboard-card-content {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Placeholder Pattern Styling Override (if needed) */
+.dashboard-card svg {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.dashboard-card:hover svg {
+    opacity: 1;
+}
+
+/* Typography Enhancements */
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .dashboard-title {
+    color: #f3f4f6;
+}

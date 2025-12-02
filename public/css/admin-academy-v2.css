@@ -1,0 +1,206 @@
+/* Admin Academy V2 Custom CSS - Django Style */
+
+/* General Container */
+.academy-v2-container {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+    /* Ensure white background for the main area */
+}
+
+/* Header Section */
+.academy-v2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: none;
+}
+
+.academy-v2-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+}
+
+.academy-v2-add-btn {
+    background-color: #79aec8;
+    /* Default Django blueish, but image shows grey */
+    background-color: #999;
+    /* Matching the grey in the image */
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    /* Pill shape */
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.academy-v2-add-btn:hover {
+    background-color: #777;
+    text-decoration: none;
+    color: white !important;
+}
+
+.academy-v2-add-btn::after {
+    content: '+';
+    margin-left: 5px;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Search Bar */
+.academy-v2-toolbar {
+    background: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.academy-v2-search-form {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.academy-v2-search-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    margin-right: 10px;
+}
+
+.academy-v2-search-input {
+    flex-grow: 1;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.academy-v2-search-btn {
+    padding: 6px 15px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.academy-v2-search-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Action Bar */
+.academy-v2-actions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.academy-v2-actions label {
+    margin-right: 5px;
+}
+
+.academy-v2-select {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.academy-v2-go-btn {
+    padding: 4px 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.academy-v2-counter {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Table */
+.academy-v2-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.academy-v2-table th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #999;
+    /* Grey headers */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.academy-v2-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.academy-v2-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Checkbox Column */
+.academy-v2-checkbox-col {
+    width: 30px;
+    text-align: center;
+}
+
+/* Course Name Link */
+.academy-v2-course-link {
+    color: #4f2d7f;
+    /* Purple */
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.academy-v2-course-link:hover {
+    color: #6a3b9e;
+    text-decoration: underline;
+}
+
+/* Active Icon */
+.academy-v2-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Footer Count */
+.academy-v2-footer-count {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}

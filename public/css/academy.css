@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('GT Walsheim Pro'), url('https://fonts.cdnfonts.com/s/39241/GTWALSHEIM.woff') format('woff');
+}
+#hamburger-input{
+    display: none;
+}
+#hamburger-menu {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    width: 35px;
+    height: 25px;
+
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'GT Walsheim Pro', Sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #000, #000 20%,
+        transparent 20%, transparent 40%,
+        #000 40%, #000 60%,
+        transparent 60%, transparent 80%,
+        #000 80%, #000 100%
+    );
+}
+#hamburger-menu #sidebar-menu {
+    visible: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 23px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+.minmen:hover{
+    background-color: #F0F1F8;
+}
+#hamburger-menu h3 {
+    color: #B9FAF8;
+    font-size: 2.2rem;
+}
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+#hamburger-menu a {
+    color: #B9FAF8;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+#hamburger-input:checked ~ .overlay{
+    visibility: visible;
+    opacity: 0.4;
+}
+
+.newimg {
+    width:260px;
+    height:50px;
+
+    position: fixed;
+
+    padding: 20px;
+    background: url('images/GTlogo.png');
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    font-family:  'GT Walsheim Pro', sans-serif !important;
+}
+
+.event-banner-wrapper h2 {
+    font-family:  'GT Walsheim Pro', sans-serif !important;
+}
+@media (max-width: 767px){
+    #hamburger-menu {
+        position: absolute;
+        top: -295px;
+        right: 5px;
+    }
+}
+.show{
+    display: block;
+    float: none !important;
+}
+.filterDiv{
+    display:none;
+}
+.btn, .btn.disabled{
+    border:none !important;
+    width:100% !important;
+    border-radius:0px !important;
+    background: white !important;
+    color:black !important;
+    box-shadow: 0px 0px 0px !important;
+}
+.btn:hover{
+    background:#808080 !important;
+}

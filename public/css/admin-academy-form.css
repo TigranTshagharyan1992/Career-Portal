@@ -1,0 +1,83 @@
+/* Admin Academy Form Custom CSS */
+
+/* Specific form styling for create page */
+.form-row {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+.form-row label {
+    width: 160px;
+    font-weight: 700;
+    color: #333;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+.form-row label.required::after {
+    content: '*';
+    color: red;
+    margin-left: 3px;
+}
+
+.form-row .field-content {
+    flex-grow: 1;
+}
+
+.vTextField {
+    width: 400px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-row {
+    padding: 15px 0;
+    margin-top: 20px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    text-align: right;
+    border-radius: 4px;
+}
+
+.submit-row button {
+    background: #4f2d7f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+.submit-row button:hover {
+    background: #3d2263;
+}
+
+/* CKEditor overrides */
+.ck-editor__editable_inline {
+    min-height: 300px;
+}
+
+/* Date input styling */
+input[type="date"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.today-link {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: #4f2d7f;
+    text-decoration: none;
+    cursor: pointer;
+}
