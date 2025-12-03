@@ -20,6 +20,9 @@
                 @enderror
             </div>
         </div>
+        @if(isset($course)&& $course->id)
+            <input type="hidden" name="id" value="{{ $course->id }}">
+        @endif
 
         {{-- Country --}}
         <div class="form-row field-Country">
@@ -78,7 +81,7 @@
             <div class="field-content">
                 <input type="date" name="Deadline" id="Deadline" required
                        class="@error('Deadline') is-invalid @enderror"
-                       value="{{ old('Deadline', $course->Deadline ?? '') }}">
+                       value="{{ old('Deadline', $course->Deadline->format('Y-m-d') ?? '') }}">
                 <span class="today-link"
                       onclick="document.getElementById('Deadline').valueAsDate = new Date()">Today</span>
 
@@ -92,6 +95,7 @@
         <div class="form-row field-is_active">
             <label for="is_active">Active:</label>
             <div class="field-content">
+                <input type="hidden" name="is_active" value="0">
                 <input type="checkbox" name="is_active" value="1" id="is_active"
                     {{ old('is_active', $course->is_active ?? 1) ? 'checked' : '' }}>
             </div>

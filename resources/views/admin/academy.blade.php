@@ -25,11 +25,17 @@
 
                         <!-- Search Toolbar -->
                         <div id="toolbar" class="academy-v2-toolbar">
-                            <form id="changelist-search" method="get" class="academy-v2-search-form">
+                            <form action="{{ route('admin.academy') }}" id="changelist-search" method="get" class="academy-v2-search-form">
                                 <label for="searchbar">
                                     <img src="{{ asset('admin/img/search.svg') }}" alt="Search" class="academy-v2-search-icon">
                                 </label>
-                                <input type="text" size="40" name="q" id="searchbar" class="academy-v2-search-input">
+                                <input type="text" size="40" name="academy_name" value="{{ request('academy_name')??'' }}" id="searchbar" class="academy-v2-search-input">
+                                <label>
+                                    <input type="checkbox" name="only_active" value="1"
+                                        {{ request('only_active') ? 'checked' : '' }}>
+                                    Only Active
+                                </label>
+
                                 <input type="submit" value="Search" class="academy-v2-search-btn">
                             </form>
                         </div>
@@ -49,7 +55,7 @@
                                 <tbody>
                                 @foreach($academies as $academy)
                                     <tr>
-                                        <th><a href="{{ url('/admin/academy/courses/' . $academy->id . '/change') }}" class="academy-v2-course-link">{{ $academy->Course_name }}</a></th>
+                                        <th><a href="{{ route('admin.academy.edith', $academy->id) }}" class="academy-v2-course-link">{{ $academy->Course_name }}</a></th>
                                         <td>{{ $academy->Deadline->format('F j, Y') }}</td>
                                         <td>{{ $academy->time_create->format('M. j, Y, g:i a') }}</td>
                                         <td>
@@ -67,6 +73,10 @@
 
                         <div class="academy-v2-footer-count">
                             {{ count($academies) }} Academy
+                        </div>
+
+                        <div class="academy-v2-pagination">
+                            {{ $academies->appends(request()->input())->links() }}
                         </div>
 
                     </div>

@@ -45,7 +45,7 @@
     </div>
 
     <div id="user-tools">
-        Welcome, <strong>{{ auth()->user()->name ?? 'admin' }}</strong>.<br>
+        <a href="{{route('admin.home')}}">Home</a>
         <a href="/">View webpage</a> /
         <a href="/admin/password_change/">Change password</a> /
         <a href="/admin/logout/">Log out</a>

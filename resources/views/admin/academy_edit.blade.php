@@ -8,6 +8,10 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <x-academy-form :action="route('admin.academy.update',$academy->id)" method="POST" :course="$academy"/>
+        @include('admin.components.academy_form', [
+           'action' => route('admin.academy.update', $academy->id),
+           'method' => 'PUT',
+           'course' => $academy
+       ])
     </div>
 @endsection
