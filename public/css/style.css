@@ -402,10 +402,12 @@ ul.nav li.active a:before {
 }
 
 .heading p {
-    padding: 20px 0px;
-    font-size: 13px;
+    font-size: inherit;
     font-weight: bolder;
     color: #555;
+}
+.heading p:first-child, .heading p:nth-child(2) {
+    font-size: 25px;
 }
 
 .ab-sec {

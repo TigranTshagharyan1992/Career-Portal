@@ -6,36 +6,31 @@
 @endpush
 @section('content')
 
-
     <section id="slider" style="margin:auto; text-align:center;">
         <div id="home-carousel" class="swiper mySwiper">
 
             <div class="swiper-wrapper">
 
+                {{-- 🎯 Slider 1: Using data from $about->slider1_title and $about->slider1_description --}}
                 <div class="swiper-slide">
                     <img src="{{ asset('images/Logo/shutterstock_1244257252.jpg') }}"/>
 
                     <div class="slide-caption">
-                        <h2 class="headtext">We have answers</h2>
+                        <h2 class="headtext">{{ $about->slider1_title ?? 'Default Slider 1 Title' }}</h2>
                         <p class="headtext">
-                            If you have questions on how coronavirus will impact your business, get
-                            in touch. At Grant Thornton we have committed to support our business community
-                            in the face of this uncertainty. Please proceed with the short form and a member of our
-                            team will be in touch.
+                            {{ $about->slider1_description ?? 'Default Slider 1 Description' }}
                         </p>
                     </div>
                 </div>
 
+                {{-- 🎯 Slider 2: Using data from $about->slider2_title and $about->slider2_description --}}
                 <div class="swiper-slide">
                     <img src="{{ asset('images/Logo/offset_942382.jpg') }}"/>
 
                     <div class="slide-caption">
-                        <h2 class="headtext">CAREER</h2>
+                        <h2 class="headtext">{{ $about->slider2_title ?? 'Default Slider 2 Title' }}</h2>
                         <p class="headtext">
-                            The first thing about us that will strike you will surely be the freedom
-                            to grow. With us, you will be in charge of your career to take you places. Here you will
-                            find an arena for your creativity and bold solutions for tasks assigned and objectives
-                            set.
+                            {{ $about->slider2_description ?? 'Default Slider 2 Description' }}
                         </p>
                     </div>
                 </div>
@@ -47,22 +42,12 @@
             <div class="swiper-pagination"></div>
 
         </div>
-        <!-- About Section -->
+
         <div class="container py-5">
             <div class="col-md-8 offset-md-2">
                 <div class="heading text-center">
-                    <p style="font-weight:bold; font-family:'GT Walsheim Pro', sans-serif; font-size:35px;">
-                        We are Grant Thornton.
-                    </p>
-                    <p style="font-weight:bold; font-family:'GT Walsheim Pro', sans-serif; font-size:30px;">
-                        Going beyond business as usual, so you can too.
-                    </p>
-                    <p style="font-size:18px; font-weight:bold; font-family:'GT Walsheim Pro', sans-serif;">
-                        We invest in listening, building relationships and understanding your concerns to deliver an experience
-                        that’s more personal, agile and proactive. We work at the pace that matters. Yours.
-                        That's why we celebrate fresh thinking and diverse perspectives to find better solutions.
-                        We don’t predict the future. We help you shape it.
-                    </p>
+                    {{-- 🎯 Text 1 Content: Using $about->text1 and rendering HTML if it's a rich text field --}}
+                    {!! $about->text1 !!}
                 </div>
             </div>
         </div>
@@ -72,19 +57,10 @@
         <div class="container py-5">
             <div class="col-md-8 offset-md-2">
                 <div class="heading text-center">
-                    <p style="font-weight:bold; font-family:'GT Walsheim Pro', sans-serif; font-size:35px;">
-                        We embrace what makes each market unique.
-                    </p>
-                    <p style="font-weight:bold; font-family:'GT Walsheim Pro', sans-serif; font-size:30px;">
-                        On a global scale.
-                    </p>
-                    <p style="font-size:18px; font-weight:bold; font-family:'GT Walsheim Pro', sans-serif;">
-                        We are a global network of 68,000 people in member firms in 147 markets with a common goal —
-                        to help you realise your ambitions. Which is why our network combines global scale and capability
-                        with local insights and understanding. So, whether you’re growing in one market or many,
-                        looking to operate more effectively, managing risk and regulation, or realising stakeholder value,
-                        our member firms have the assurance, tax and advisory capabilities you need with the quality you expect.
-                    </p>
+                    {{-- 🎯 Text 2 Content: Using $about->text2 and rendering HTML if it's a rich text field --}}
+                    <div style="font-size:18px; font-weight:bold; font-family:'GT Walsheim Pro', sans-serif;">
+                        {!! $about->text2 !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,11 +94,10 @@
                 clickable: true,
             },
             autoplay: {
-                delay: 5000,  // 10 seconds
+                delay: 5000,  // 5 seconds
                 disableOnInteraction: false, // keeps autoplay even after manual navigation
             },
             loop: true, // enable infinite loop
         });
     </script>
 @endpush
-

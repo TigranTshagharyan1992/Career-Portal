@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
     public function __invoke()
     {
-        return view('about');
+        $about = AboutUs::first();
+        return view('about', compact('about'));
     }
 }
