@@ -111,14 +111,83 @@
     padding-top: 0;
     margin-top: 0;
 }
+
 .image-preview {
     max-width: 200px;
     margin-top: 10px;
     display: block;
 }
-.form-control .rich-editor{
+
+.form-control .rich-editor {
     min-height: 200px;
 }
-.ck-editor__editable{
+
+.ck-editor__editable {
     min-height: 180px;
+}
+
+/* Section Titles */
+#home .section-title {
+    color: #4f2d7f;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#home .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #4f2d7f, #9c27b0, #4f2d7f);
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
+    border-radius: 2px;
+}
+
+#home .section-title:first-of-type {
+    margin-top: 0;
+}
+
+/* Animated Divider */
+.animated-divider {
+    height: 4px;
+    margin: 40px 0;
+    background: linear-gradient(90deg, #f0f0f0, #4f2d7f, #f0f0f0);
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+@keyframes gradient-slide {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+/* Entrance Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+    /* Delay to start after page load/other animations */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

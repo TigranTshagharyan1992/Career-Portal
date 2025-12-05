@@ -10,6 +10,7 @@
             @csrf
 
             {{-- Slider 1 Title: Matches validation key 'slider1_title' --}}
+            <h3 class="section-title">Sliders</h3>
             <div class="form-group">
                 <label for="slider1_title">Slider 1 Title</label>
                 <input type="text" name="slider1_title" id="slider1_title" class="form-control"
@@ -47,8 +48,12 @@
                 @endif
             </div>
 
-            {{-- Text 1: Matches validation key 'text1' --}}
-            <div class="form-group">
+            <div class="animated-divider"></div>
+
+            <div class="fade-in-up">
+                {{-- Text 1: Matches validation key 'text1' --}}
+                <h3 class="section-title">Main Content</h3>
+                <div class="form-group">
                 <label for="text1">Text 1</label>
                 <textarea name="text1" id="text1" class="form-control rich-editor"
                           rows="4">{{ old('text1', $about->text1 ?? '') }}</textarea>
@@ -65,6 +70,7 @@
                 @if($errors->has('text2'))
                     <div class="text-danger">{{ $errors->first('text2') }}</div>
                 @endif
+            </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>
