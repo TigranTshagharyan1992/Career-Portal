@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin_interface/css/rtl.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/responsive_rtl.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin_interface/css/admin-interface.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-dashboard.css') }}">
 
     <!-- Inline styles stay as they are -->
     @yield('styles')
@@ -46,6 +47,7 @@
 
     <div id="user-tools">
         <a href="{{route('admin.home')}}">Home</a>
+        <a href="{{route('admin.about')}}">About</a>
         <a href="/">View webpage</a> /
         <a href="/admin/password_change/">Change password</a> /
         <a href="/admin/logout/">Log out</a>

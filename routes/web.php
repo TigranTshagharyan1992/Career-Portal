@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminAcademyController;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminAboutUsController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/academy', AcademyController::class)->name('academy');
@@ -24,5 +25,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/academy/edith/{id}', [AdminAcademyController::class,'edith'])->name('admin.academy.edith');
     Route::put('/academy/update', [AdminAcademyController::class,'update'])->name('admin.academy.update');
     Route::get('/home', [AdminHomeController::class,'show'])->name('admin.home');
-    Route::get('/home/update', [AdminHomeController::class,'update'])->name('admin.home.update');
+    Route::post('/home/update', [AdminHomeController::class,'store'])->name('admin.home.update');
+    Route::get('/about', [AdminAboutUsController::class,'show'])->name('admin.about');
+    Route::post('/about/update', [AdminAboutUsController::class,'store'])->name('admin.about.update');
 });

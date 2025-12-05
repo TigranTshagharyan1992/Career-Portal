@@ -3,8 +3,6 @@
 @section('title', 'Career Portal Admin')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-academy-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-academy-form.css') }}">
 @endsection
