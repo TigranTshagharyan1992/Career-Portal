@@ -1411,7 +1411,7 @@ color:#fff;
 }
 
 
-        .contact-section .form-control{
+.contact-section .form-control{
   border: 1px solid  #2fbfbc;
   border-top: none;
   border-left: none;
@@ -1621,10 +1621,6 @@ a {
   border-radius: 6px;
   padding: 0 15px;
   resize: none;
-}
-.col-md-8
-{
-    margin-top:-70px;
 }
 
 

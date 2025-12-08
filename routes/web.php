@@ -9,14 +9,16 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminAcademyController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminAboutUsController;
+use App\Http\Controllers\SendEmailController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/academy', AcademyController::class)->name('academy');
 Route::get('/about', AboutController::class)->name('about');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/send-email', SendEmailController::class)->name('send.email');
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminAcademyController::class,'index'])->name('admin.dashboard');
     Route::get('/academy', [AdminAcademyController::class,'index'])->name('admin.academy');

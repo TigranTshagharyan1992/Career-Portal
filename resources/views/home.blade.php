@@ -74,4 +74,37 @@
             </div>
         </section>
     </div>
+    <!-- Success Modal -->
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow-lg">
+                <div class="modal-header bg-success text-white border-0 rounded-top">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p id="successMessage" class="text-center mb-0">Your message has been sent successfully.</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
+@push('page-js')
+    @if(session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Set message from session
+                document.getElementById('successMessage').innerText = "{{ session('success') }}";
+
+                // Show the modal
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
+            });
+        </script>
+    @endif
+@endpush
