@@ -75,20 +75,22 @@
         </section>
     </div>
     <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <!-- Success Modal -->
+    <div class="modal fade custom-modal" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content rounded-lg shadow">
-                <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color:white;">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p id="successMessage">Your message has been sent successfully.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">OK</button>
+                <div class="modal-body text-center pt-0 pb-4">
+                    <div class="success-icon mb-3">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h4 class="modal-title mb-2" id="successModalLabel">Success!</h4>
+                    <p id="successMessage" class="mb-4">Your message has been sent successfully.</p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4" data-dismiss="modal">OK, Great!</button>
                 </div>
             </div>
         </div>
@@ -104,8 +106,7 @@
                 document.getElementById('successMessage').innerText = "{{ session('success') }}";
 
                 // Show the modal
-                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                successModal.show();
+                $('#successModal').modal('show');
             });
         </script>
     @endif
