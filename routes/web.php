@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminAcademyController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminAboutUsController;
+use App\Http\Controllers\Admin\AdminContactUSController;
 use App\Http\Controllers\SendEmailController;
 
 Route::get('/', HomeController::class)->name('home');
@@ -30,4 +31,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/home/update', [AdminHomeController::class,'store'])->name('admin.home.update');
     Route::get('/about', [AdminAboutUsController::class,'show'])->name('admin.about');
     Route::post('/about/update', [AdminAboutUsController::class,'store'])->name('admin.about.update');
+    Route::get('/contact-us', AdminContactUSController::class)->name('admin.contact.us');
 });

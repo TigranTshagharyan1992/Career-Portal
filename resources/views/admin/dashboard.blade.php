@@ -16,7 +16,7 @@
                     <div class="app-academy module admin-module">
                         <table class="admin-table">
                             <tr class="model-courses">
-                                <th scope="row"><a href="/admin/academy/courses/">Academy</a></th>
+                                <th scope="row"><a href="{{route('admin.academy')}}">Academy</a></th>
                             </tr>
                             <tr class="model-students">
                                 <th scope="row"><a href="/admin/academy/students/">Academy Applicants</a></th>
@@ -26,6 +26,9 @@
                             </tr>
                             <tr class="model-students">
                                 <th scope="row"><a href="/admin/academy/students/">Vacancies Applicants</a></th>
+                            </tr>
+                            <tr class="model-students">
+                                <th scope="row"><a href="{{route('admin.contact.us')}}">Contact Us</a></th>
                             </tr>
 
                             <!-- Repeat other models as needed -->
