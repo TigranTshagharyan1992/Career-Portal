@@ -10,7 +10,8 @@ class AdminContactUsController extends Controller
 {
     public function __invoke()
     {
-        $contactMessages = ContactUs::orderBy('created_at', 'desc')->paginate(10);
+        $country = session('country');
+        $contactMessages = ContactUs::orderBy('created_at', 'desc')->where('Country', $country)->paginate(10);
         return view('admin.contact_us', compact('contactMessages'));
     }
 }

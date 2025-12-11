@@ -17,11 +17,12 @@ class EmailRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'message' => 'nullable|required|string',
-            'phone' => '|string|max:255',
+            'Name' => 'required|string|max:255',
+            'Surname' => 'required|string|max:255',
+            'Country' => 'required|string|max:255',
+            'Email' => 'required|email|max:255',
+            'Message' => 'nullable|required|string',
+            'Phone' => '|string|max:255',
         ];
     }
 }

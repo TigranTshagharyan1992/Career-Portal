@@ -50,7 +50,7 @@
         <a href="{{route('admin.about')}}">About</a>
         <a href="/">View webpage</a> /
         <a href="/admin/password_change/">Change password</a> /
-        <a href="/admin/logout/">Log out</a>
+        <a href="{{route('admin.logout')}}">Log out</a>
     </div>
 </div>
 
@@ -58,6 +58,7 @@
 @yield('content')
 
 <!-- JS -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/js/nav_sidebar.js') }}" defer></script>
 <script src="{{ asset('admin_interface/foldable-apps/foldable-apps.js') }}"></script>
 <script src="{{ asset('admin_interface/magnific-popup/jquery.magnific-popup.js') }}"></script>

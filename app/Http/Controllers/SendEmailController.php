@@ -14,7 +14,7 @@ class SendEmailController extends Controller
     {
         $data = $request->validated();
 
-        ContactUs::created($data);
+        ContactUs::create($data);
 
         SendContactEmail::dispatch($data);
 

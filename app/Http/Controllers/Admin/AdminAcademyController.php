@@ -16,7 +16,7 @@ class AdminAcademyController extends Controller
     {
         $query = $request->input('academy_name');
         $onlyActive = $request->input('only_active');
-        $academiesQuery = AcademyCource::query();
+        $academiesQuery = AcademyCource::query()->where('Country', session('country'));
 
         if ($query) {
             $academiesQuery->where(function($q) use ($query) {

@@ -17,11 +17,11 @@ Route::get('/academy', AcademyController::class)->name('academy');
 Route::get('/about', AboutController::class)->name('about');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/send-email', SendEmailController::class)->name('send.email');
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminAcademyController::class,'index'])->name('admin.dashboard');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
     Route::get('/academy', [AdminAcademyController::class,'index'])->name('admin.academy');
     Route::get('/academy/create', [AdminAcademyController::class,'create'])->name('admin.academy.create');
     Route::post('/academy/create', [AdminAcademyController::class,'store'])->name('admin.academy.store');

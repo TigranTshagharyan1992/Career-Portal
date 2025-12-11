@@ -55,7 +55,20 @@
                                                       )
                                             }}
                                         </td>
-                                        <td>{{ substr($contact->Message, 0, 100,) }}</td>
+                                        <td>
+                                            @if(strlen($contact->Message) > 100)
+                                                <a href="#message-popup-{{ $contact->id }}" class="open-popup-link" style="cursor: pointer; color: inherit; text-decoration: none;" title="Click to view full message">
+                                                    {{ substr($contact->Message, 0, 100) }}...
+                                                </a>
+                                                
+                                                <div id="message-popup-{{ $contact->id }}" class="white-popup mfp-hide">
+                                                    <h3>Message from {{ $contact->Name }}</h3>
+                                                    <p>{{ $contact->Message }}</p>
+                                                </div>
+                                            @else
+                                                {{ $contact->Message }}
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -70,9 +83,33 @@
                 </div>
             </div>
 
-            <br class="clear">
+            <br class="clear" />
         </div>
 
         <div id="footer"></div>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        $('.open-popup-link').magnificPopup({
+            type:'inline',
+            midClick: true
+        });
+    });
+</script>
+<style>
+.mfp-hide {
+  display: none !important;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+</style>
 @endsection

@@ -29,6 +29,9 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
+            $user = Auth::user();
+            session()->put('country', explode('_', $user->username)[1]);
+
             $request->session()->regenerate();
             return redirect()->intended(route('admin.dashboard'));
         }

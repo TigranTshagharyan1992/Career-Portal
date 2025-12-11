@@ -9,8 +9,11 @@ class ContactUs extends Model
     protected $table = 'contact_us';
 
     protected $fillable = [
-        'name',
-        'email',
-        'message',
+        'Name',
+        'Surname',
+        'Country',
+        'Email',
+        'Message',
+        'Phone',
     ];
 }

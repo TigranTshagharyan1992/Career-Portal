@@ -19,15 +19,22 @@
 
                     <div class="form-group">
                         <label for="id_Name" class="form-label">Name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" maxlength="255" required id="id_Name" class="form-control">
+                        <input type="text" name="Name" maxlength="255" required id="id_Name" class="form-control" />
                         @error('name')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="id_Surname" class="form-label">Surname <span class="text-danger">*</span></label>
+                        <input type="text" name="Surname" maxlength="255" required id="id_Surname" class="form-control" />
+                        @error('surname')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="id_Country" class="form-label">Country <span class="text-danger">*</span></label>
-                        <select name="country" id="id_Country" class="form-control country-select">
+                        <select name="Country" id="id_Country" class="form-control country-select">
                             <option value="Armenia" selected>Armenia</option>
                             <option value="Lebanon">Lebanon</option>
                             <option value="Georgia">Georgia</option>
@@ -39,7 +46,7 @@
 
                     <div class="form-group">
                         <label for="id_Phone" class="form-label">Phone <span class="text-danger">*</span></label>
-                        <input type="text" name="phone" maxlength="255" required id="id_Phone" class="form-control">
+                        <input type="text" name="Phone" maxlength="255" required id="id_Phone" class="form-control" />
                         @error('phone')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -47,7 +54,7 @@
 
                     <div class="form-group">
                         <label for="id_Email" class="form-label">E-mail <span class="text-danger">*</span></label>
-                        <input type="email" name="email" maxlength="255" required id="id_Email" class="form-control">
+                        <input type="email" name="Email" maxlength="255" required id="id_Email" class="form-control" />
                         @error('email')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -55,7 +62,7 @@
 
                     <div class="form-group">
                         <label for="id_Message" class="form-label">Message</label>
-                        <textarea name="message" cols="40" rows="5" required id="id_Message" class="form-control"></textarea>
+                        <textarea name="Message" cols="40" rows="5" required id="id_Message" class="form-control"></textarea>
                         @error('message')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror

@@ -50,28 +50,32 @@
 
     <div class="field">
         <div class="label">Name:</div>
-        <div class="value">{{ $data['name'] }}</div>
+        <div class="value">{{ $data['Name'] }}</div>
+    </div>
+    <div class="field">
+        <div class="label">Surname:</div>
+        <div class="value">{{ $data['Surname'] }}</div>
     </div>
 
     <div class="field">
         <div class="label">Country:</div>
-        <div class="value">{{ $data['country'] }}</div>
+        <div class="value">{{ $data['Country'] }}</div>
     </div>
 
     <div class="field">
         <div class="label">Phone:</div>
-        <div class="value">{{ $data['phone'] }}</div>
+        <div class="value">{{ $data['Phone'] }}</div>
     </div>
 
     <div class="field">
         <div class="label">Email:</div>
-        <div class="value">{{ $data['email'] }}</div>
+        <div class="value">{{ $data['Email'] }}</div>
     </div>
 
     <div class="field">
         <div class="label">Message:</div>
         <div class="message-box">
-            {{ $data['message'] }}
+            {{ $data['Message'] }}
         </div>
     </div>
 
